@@ -3,13 +3,16 @@ import NavBar from './components/NavBar'
 import PersonList from './components/PersonList'
 //import logo from './logo.svg';
 import './App.css';
+import ObjectList from './components/ObjectList';
 
 class App extends Component {
   render() {
     return (
       <div>
         <NavBar />
+ 
         <PersonList />
+        <ObjectList />
       </div>
       /*
       <div className="App">
