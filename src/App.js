@@ -4,16 +4,23 @@ import PersonList from './components/PersonList'
 //import logo from './logo.svg';
 import './App.css';
 import ObjectList from './components/ObjectList';
-
+import LabelBottomNavigation from './components/LabelBottomNavigation';
+import SearchAppBar from './components/SearchAppBar';
+import IconButtons from './components/IconButtons';
+import SingleLineGridList from './components/SingleLineGridList';
 class App extends Component {
   render() {
     return (
       <div>
+        
         <NavBar />
- 
-        <PersonList />
+        
+        <IconButtons />
         <ObjectList />
+        
+        <LabelBottomNavigation />
       </div>
+     
       /*
       <div className="App">
         <header className="App-header">

@@ -21,7 +21,7 @@ const ObjectTarget = (props) => {
                             title="Contemplative Reptile"
                             image= {props.objtarget.img}
                         />
-                        <img src={"data:image/jpg;base64," +  props.objtarget.img} />
+                        <img alt="" src={"data:image/jpg;base64," +  props.objtarget.img} />
                         <Typography>
                             {props.objtarget.name}
                         </Typography>
