@@ -1,21 +1,39 @@
-import React from 'react'
+
+import React, { Component } from 'react';
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import TemporaryDrawer from './TemporaryDrawer'
-const NavBar = () => {
+
+class NavBar extends Component{
+    state = {
+        persons: [],
+        searchString:''
+    }
+
+    onSearchInputCHange = (event) => {
+        if(event.target.value){
+            this.setState({searchString:event.target.value})
+        }
+        else{
+            this.setState({searchString:''})
+        }
+        //this.getPersen()
+    }
+    render() {
     return (
-        <div>
+
             <AppBar position="static">
                 <Toolbar>
-                    <TemporaryDrawer />
                     <Typography variant="title" color="inherit">
                         React-Eyesight
                     </Typography>
+
                 </Toolbar>
             </AppBar>
-        </div>
+
     )
+    }
 }
 
 export default NavBar;

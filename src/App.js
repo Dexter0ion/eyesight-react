@@ -5,20 +5,18 @@ import PersonList from './components/PersonList'
 import './App.css';
 import ObjectList from './components/ObjectList';
 import LabelBottomNavigation from './components/LabelBottomNavigation';
-import SearchAppBar from './components/SearchAppBar';
-import IconButtons from './components/IconButtons';
-import SingleLineGridList from './components/SingleLineGridList';
+import CenteredTabs from './components/CenteredTabs';
+import NavTabs from './components/NavTabs';
+
 class App extends Component {
   render() {
     return (
       <div>
         
         <NavBar />
-        
-        <IconButtons />
-        <ObjectList />
-        
-        <LabelBottomNavigation />
+        <NavTabs />
+
+       
       </div>
      
       /*

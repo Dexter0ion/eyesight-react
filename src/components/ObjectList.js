@@ -4,6 +4,7 @@ import axios from 'axios';
 import Grid from '@material-ui/core/Grid'
 import ObjectTarget from './ObjectTarget'
 const API = 'http://0.0.0.0:5000/search?query='
+//const API = 'http://192.168.0.104:5000/search?query='
 const DEFAULT_QUERY = 'object'
 
 class ObjectList extends Component {
