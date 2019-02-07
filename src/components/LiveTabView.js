@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+
 import Typography from '@material-ui/core/Typography'
 import LiveStreamCard from './LiveStreamCard'
+import ClassIdTable from './ClassIdTable'
 class LiveTabView extends Component {
     state = {
         objects: []
@@ -12,16 +13,17 @@ class LiveTabView extends Component {
     }
 
     render() {
-        const { classes } = this.props;
+
 
         return (
-        <div>
+            <div>
                 <Typography>
                     视频流界面
                 </Typography>
-                
+
                 <LiveStreamCard />
-                </div>
+                <ClassIdTable />
+            </div>
         )
     }
 }

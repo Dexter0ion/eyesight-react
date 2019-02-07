@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar'
-import PersonList from './components/PersonList'
+//import PersonList from './components/PersonList'
 //import logo from './logo.svg';
 import './App.css';
-import ObjectList from './components/ObjectList';
-import LabelBottomNavigation from './components/LabelBottomNavigation';
-import CenteredTabs from './components/CenteredTabs';
+//import ObjectList from './components/ObjectList';
+//import LabelBottomNavigation from './components/LabelBottomNavigation';
+//import CenteredTabs from './components/CenteredTabs';
 import NavTabs from './components/NavTabs';
 
 class App extends Component {

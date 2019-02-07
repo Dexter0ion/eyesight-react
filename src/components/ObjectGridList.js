@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import GridList from '@material-ui/core/GridList';
@@ -7,7 +8,12 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import tileData from './tileData';
+
+
+
+const API = 'http://0.0.0.0:5000/search?query='
+//const API = 'http://192.168.0.104:5000/search?query='
+const DEFAULT_QUERY = 'object'
 
 const styles = theme => ({
   root: {
@@ -18,46 +24,51 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
-    height: 450,
+    //width: 500,
+    //height: 450,
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
 });
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-function TitlebarGridList(props) {
-  const { classes } = props;
+class ObjectGridList extends Component {
+  state = {
+    objects: []
+  }
 
-  return (
-    <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
+  getObject = () => {
+    axios.get(API + DEFAULT_QUERY)
+      .then(res => {
+        const objects = res.data;
+        this.setState({ objects })
+      })
+      .catch(error => {
+        console.log("Error occured while fetching data")
+        console.log(error)
+      })
+  }
+
+  componentDidMount() {
+    this.getObject();
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    return (
+      <div className={classes.root}>
+      <GridList cellHeight={200} className={classes.gridList}>
         <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
+          <ListSubheader component="div">Objects</ListSubheader>
         </GridListTile>
-        {tileData.map(tile => (
+        
+        {this.state.objects.map(tile => (
           <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+            <img alt="" src={"data:image/jpg;base64," +  tile.img} />
             <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
+              title={tile.name}
+              subtitle={<span>by: {tile.value}</span>}
               actionIcon={
                 <IconButton className={classes.icon}>
                   <InfoIcon />
@@ -68,11 +79,12 @@ function TitlebarGridList(props) {
         ))}
       </GridList>
     </div>
-  );
+        )
+  }
 }
 
-TitlebarGridList.propTypes = {
+ObjectGridList.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(TitlebarGridList);
+export default withStyles(styles)(ObjectGridList);

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Typography from '@material-ui/core/Typography'
 import ObjectList from './ObjectList';
+import ObjectGridList from './ObjectGridList';
 
 class ObjectTabView extends Component {
     state = {
@@ -18,6 +18,7 @@ class ObjectTabView extends Component {
                 <Typography>
                     目标检测界面
                 </Typography>
+                <ObjectGridList />
                 <ObjectList />
             </div>
         )
