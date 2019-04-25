@@ -8,6 +8,9 @@ import './App.css';
 //import CenteredTabs from './components/CenteredTabs';
 import NavTabs from './components/NavTabs';
 
+
+
+
 class App extends Component {
   render() {
     return (

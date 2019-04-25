@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography'
-
+import PortraitTable from './PortraitTable';
 
 class FaceTabView extends Component {
     state = {
@@ -17,6 +17,7 @@ class FaceTabView extends Component {
                 <Typography>
                     面部识别界面
                 </Typography>
+                <PortraitTable/>
             </div>
         )
     }

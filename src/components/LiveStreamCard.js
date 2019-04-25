@@ -19,7 +19,7 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+    maxWidth: 600,
   },
   media: {
     height: 0,
@@ -58,7 +58,7 @@ class LiveStreamCard extends React.Component {
         <CardHeader
           avatar={
             <Avatar aria-label="Recipe" className={classes.avatar}>
-              R
+              0
             </Avatar>
           }
           action={
@@ -66,18 +66,17 @@ class LiveStreamCard extends React.Component {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
+          title="直播视频流"
+          subheader="时间戳:2019"
         />
         <CardMedia
           className={classes.media}
           image="http://127.0.0.1:5000/api/livestream/udp"
-          title="Paella dish"
+          title="LiveStream"
         />
         <CardContent>
           <Typography component="p">
-            This impressive paella is a perfect party dish and a fun meal to cook together with your
-            guests. Add 1 cup of frozen peas along with the mussels, if you like.
+            UDP LiveStream by Dexter0ion
           </Typography>
         </CardContent>
         <CardActions className={classes.actions} disableActionSpacing>

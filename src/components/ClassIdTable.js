@@ -55,10 +55,11 @@ class ClassIdTable extends Component {
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>
-                  <TableCell>Dessert (100g serving)</TableCell>
-                  <TableCell align="right">id</TableCell>
-                  <TableCell align="right">name</TableCell>
-                  <TableCell align="right">cnt</TableCell>
+                  <TableCell>Name</TableCell>
+                  <TableCell align="right">Count</TableCell>
+                  <TableCell align="right">Id</TableCell>
+                  <TableCell align="right">Name</TableCell>
+
                 </TableRow>
               </TableHead>
               <TableBody>
@@ -67,9 +68,10 @@ class ClassIdTable extends Component {
                     <TableCell component="th" scope="row">
                       {row.name}
                     </TableCell>
+                    <TableCell align="right">{row.cnt}</TableCell>
                     <TableCell align="right">{row.id}</TableCell>
                     <TableCell align="right">{row.name}</TableCell>
-                    <TableCell align="right">{row.cnt}</TableCell>
+
                     
                   </TableRow>
 
