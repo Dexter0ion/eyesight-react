@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography'
 import ObjectList from './ObjectList';
-import ObjectGridList from './ObjectGridList';
+
 
 class ObjectTabView extends Component {
     state = {
