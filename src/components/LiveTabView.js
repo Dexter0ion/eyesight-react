@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography'
 import LiveStreamCard from './LiveStreamCard'
 import ClassIdTable from './ClassIdTable'
+import DoughnutExample from './doughnut';
+import BarExample from './bar';
 class LiveTabView extends Component {
     state = {
         objects: []
@@ -20,9 +22,11 @@ class LiveTabView extends Component {
                 <Typography>
                     视频流界面
                 </Typography>
-
-                <LiveStreamCard />
                 <ClassIdTable />
+                <LiveStreamCard />
+                <DoughnutExample />
+                <BarExample />
+                
             </div>
         )
     }

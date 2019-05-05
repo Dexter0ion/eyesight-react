@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import FaceTabView from './FaceTabView';
 import ObjectTabView from './ObjectTabView';
 import LiveTabView from './LiveTabView';
+import PedestrainTabView from './PedestrainTabView';
 
 function TabContainer(props) {
   return (
@@ -54,11 +55,14 @@ class NavTabs extends React.Component {
               <LinkTab label="FACE" href="page1" />
               <LinkTab label="OBJECT" href="page2" />
               <LinkTab label="LIVE" href="page3" />
+              <LinkTab label="Pedestrain" href="page4" />
             </Tabs>
           </AppBar>
           {value === 0 && <TabContainer><FaceTabView /></TabContainer>}
           {value === 1 && <TabContainer><ObjectTabView/></TabContainer>}
           {value === 2 && <TabContainer><LiveTabView/></TabContainer>}
+          {value === 3 && <TabContainer><PedestrainTabView/></TabContainer>}
+          
         </div>
       </NoSsr>
     );

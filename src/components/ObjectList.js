@@ -35,7 +35,7 @@ class ObjectList extends Component {
 
                     <Grid container spacing={24} style={{ padding: 24 }}>
                         {this.state.objects.map((currentObject, i) => (
-                            <Grid item key={i} xs={12} sm={6} lg={4} xl={2}>
+                            <Grid item key={i} xs={6} sm={6} lg={4} xl={2}>
                                 <ObjectTarget objtarget={currentObject} />
                             </Grid>
                         ))}
