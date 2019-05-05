@@ -8,7 +8,8 @@ const data = {
 		'table'
 	],
 	datasets: [{
-		data: [300, 50, 100],
+		data: [300, 50, 100]
+		/*
 		backgroundColor: [
 		'#FF6384',
 		'#36A2EB',
@@ -19,6 +20,7 @@ const data = {
 		'#36A2EB',
 		'#FFCE56'
 		]
+		*/
 	}]
 };
 

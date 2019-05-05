@@ -51,6 +51,14 @@ class ClassIdTable extends Component {
 
     render() {
         const { classes } = this.props;
+        /*
+        var data = {
+          labels:[],
+          datasets:[{
+            data:[],
+          }]
+        }
+        */
         return (
             <Paper className={classes.root}>
             <Table className={classes.table}>
