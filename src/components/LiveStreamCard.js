@@ -19,6 +19,11 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 
 const LIVE_FRAME = "http://94.191.13.184:5000/api/livestream/udp"
 const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto',
+  },
   card: {
     maxWidth: 600,
   },

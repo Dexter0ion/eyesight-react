@@ -10,6 +10,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
+import DoughnutTarget from './DoughnutTarget'
+
+
 const API = 'http://94.191.13.184:5000/api/'
 //const API = 'http://0.0.0.0:5000/api/'
 const DEFAULT_QUERY = 'classid'
@@ -17,18 +20,24 @@ const DEFAULT_QUERY = 'classid'
 const styles = theme => ({
     root: {
       width: '100%',
+      maxWidth: 600,
       marginTop: theme.spacing.unit * 3,
       overflowX: 'auto',
     },
-    table: {
-      minWidth: 700,
-    },
+
   });
 
+const mcolor=['#8e44ad','#e67e22','#f1c40f','#16a085','#1abc9c','#2c3e50']
 class ClassIdTable extends Component {
     
     state = {
-        idlist: []
+        idlist: [],
+        graphdata : {
+          labels:[],
+          datasets:[{
+            data:[]
+          }]
+        }
     }
 
     getIdList = () => {
@@ -38,6 +47,30 @@ class ClassIdTable extends Component {
                 console.log(idlist)
                 console.log(typeof(idlist))
                 this.setState({ idlist })
+                
+                const graphdata = {
+                  labels:[],
+                  datasets:[{
+                    data:[],
+                    backgroundColor: [
+
+                      ],
+                      hoverBackgroundColor: [
+
+                      ]
+                  }]
+                }
+
+                for(var key in idlist){
+                  console.log(key)
+                  graphdata['labels'].push(idlist[key].name)
+                  graphdata['datasets'][0]['data'].push(idlist[key].cnt)
+                  var rcolor=mcolor[Math.round(Math.random()*(mcolor.length-1))]
+                  graphdata['datasets'][0]['backgroundColor'].push(rcolor)
+                  graphdata['datasets'][0]['hoverBackgroundColor'].push(rcolor)
+                  console.log(graphdata)
+                }
+                this.setState({ graphdata })
             })
             .catch(error => {
                 console.log("Error occured while fetching data")
@@ -51,14 +84,7 @@ class ClassIdTable extends Component {
 
     render() {
         const { classes } = this.props;
-        /*
-        var data = {
-          labels:[],
-          datasets:[{
-            data:[],
-          }]
-        }
-        */
+        
         return (
             <Paper className={classes.root}>
             <Table className={classes.table}>
@@ -88,7 +114,9 @@ class ClassIdTable extends Component {
                 ))}
               </TableBody>
             </Table>
+            <DoughnutTarget data={this.state.graphdata} />
           </Paper>
+          
         )
         
     }
