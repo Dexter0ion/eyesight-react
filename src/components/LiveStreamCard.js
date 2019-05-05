@@ -17,6 +17,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+const LIVE_FRAME = "http://94.191.13.184:5000/api/livestream/udp"
 const styles = theme => ({
   card: {
     maxWidth: 600,
@@ -71,7 +72,7 @@ class LiveStreamCard extends React.Component {
         />
         <CardMedia
           className={classes.media}
-          image="http://127.0.0.1:5000/api/livestream/udp"
+          image={LIVE_FRAME}
           title="LiveStream"
         />
         <CardContent>

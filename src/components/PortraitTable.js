@@ -8,7 +8,8 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 
 import { withStyles } from '@material-ui/core/styles';
-const API = 'http://0.0.0.0:5000/api/'
+const API = 'http://94.191.13.184:5000/api/'
+//const API = 'http://0.0.0.0:5000/api/'
 const DEFAULT_QUERY = 'portrait'
 
 const styles = theme => ({

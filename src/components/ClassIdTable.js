@@ -10,7 +10,8 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-const API = 'http://0.0.0.0:5000/api/'
+const API = 'http://94.191.13.184:5000/api/'
+//const API = 'http://0.0.0.0:5000/api/'
 const DEFAULT_QUERY = 'classid'
 
 const styles = theme => ({
